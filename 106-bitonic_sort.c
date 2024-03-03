@@ -1,11 +1,5 @@
 #include "sort.h"
 
-void swap_ints(int *a, int *b);
-void bitonic_merge(int *array, size_t size, size_t start, size_t seq,
-		                    char flow);
-void bitonic_seq(int *array, size_t size, size_t start, size_t seq, char flow);
-void bitonic_sort(int *array, size_t size);
-
 /**
  *  * swap_ints - Swap two integers in an array.
  *   * @a: The first integer to swap.
@@ -28,8 +22,7 @@ void swap_ints(int *a, int *b)
  *      * @seq: The size of the sequence to sort.
  *       * @flow: The direction to sort in.
  *        */
-void bitonic_merge(int *array, size_t size, size_t start, size_t seq,
-		                    char flow)
+void bitonic_merge(int *array, size_t size, size_t start, size_t seq, char flow)
 {
 	    size_t i, jump = seq / 2;
 
@@ -80,7 +73,7 @@ void bitonic_seq(int *array, size_t size, size_t start, size_t seq, char flow)
  *     * @size: The size of the array.
  *      *
  *       * Description: Prints the array after each swap. Only works for
- *        * size = 2^k where k >= 0 (i.e., size equal to powers of 2).
+ *        * size = 2^k where k >= 0 (ie. size equal to powers of 2).
  *         */
 void bitonic_sort(int *array, size_t size)
 {
