@@ -24,24 +24,27 @@ void swap_ints(int *a, int *b)
 void bubble_sort(int *array, size_t size)
 {
 	    size_t i, len = size;
-	        boolean bubbly = FALSE; // Update to use boolean as defined in sort.h
+	        int tmp;
+		    boolean bubbly = FALSE;
 
-		    if (array == NULL || size < 2)
-			            return;
+		        if (array == NULL || size < 2)
+				        return;
 
-		        while (bubbly == FALSE)
-				    {
-					            bubbly = TRUE;
-						            for (i = 0; i < len - 1; i++)
-								            {
-										                if (array[i] > array[i + 1])
-													            {
-															                    swap_ints(array + i, array + i + 1);
-																	                    print_array(array, size);
-																			                    bubbly = FALSE;
-																					                }
-												        }
-							            len--;
-								        }
+			    while (bubbly == FALSE)
+				        {
+						        bubbly = TRUE;
+							        for (i = 0; i < len - 1; i++)
+									        {
+											            if (array[i] > array[i + 1])
+													                {
+																                tmp = array[i];
+																		                array[i] = array[i + 1];
+																				                array[i + 1] = tmp;
+																						                print_array(array, size);
+																								                bubbly = FALSE;
+																										            }
+												            }
+								        len--;
+									    }
 }
 
