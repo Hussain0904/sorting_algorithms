@@ -1,4 +1,5 @@
 #include "sort.h"
+#include <stdbool.h>
 
 /**
  *  * swap_ints - Swap two integers in an array.
@@ -25,14 +26,14 @@ void bubble_sort(int *array, size_t size)
 {
 	    size_t i, len = size;
 	        int tmp;
-		    boolean bubbly = FALSE;
+		    bool bubbly = false; // Update to use bool as defined in sort.h
 
 		        if (array == NULL || size < 2)
 				        return;
 
-			    while (bubbly == FALSE)
+			    while (bubbly == false)
 				        {
-						        bubbly = TRUE;
+						        bubbly = true;
 							        for (i = 0; i < len - 1; i++)
 									        {
 											            if (array[i] > array[i + 1])
@@ -41,7 +42,7 @@ void bubble_sort(int *array, size_t size)
 																		                array[i] = array[i + 1];
 																				                array[i + 1] = tmp;
 																						                print_array(array, size);
-																								                bubbly = FALSE;
+																								                bubbly = false;
 																										            }
 												            }
 								        len--;
